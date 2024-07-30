@@ -17,8 +17,13 @@ public class BuyerController {
 		restClient = restClientBuilder.build();
 	}
 
-	@GetMapping("helloEureka")
+	@GetMapping("/helloWorld")
 	public String helloWorld() {
+		return "Hello world from Buyer Mgt";
+	}
+
+	@GetMapping("helloEureka")
+	public String helloEureka() {
 		ServiceInstance serviceInstance = discoveryClient.getInstances("servicea").get(0);
 		String serviceAResponse = restClient.get()
 				.uri(serviceInstance.getUri() + "/helloWorld")

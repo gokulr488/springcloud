@@ -17,3 +17,7 @@ spring:
             uri: lb://payments-service/payments
             predicates:
               - Path=/payments/**
+          - id: buyermgt
+            uri: lb://buyermgt/buyermgt
+            predicates:
+              - Path=/buyermgt/**
