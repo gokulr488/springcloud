@@ -12,6 +12,6 @@ spring:
       mvc:
         routes:
           - id: payments
-            uri: lb://PAYMENTS
+            uri: lb://payments-service
             predicates:
               - Path=/payments/**
