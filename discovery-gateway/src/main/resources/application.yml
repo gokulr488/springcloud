@@ -1,9 +1,16 @@
-spring:
-  application:
-    name: discovery-gateway
 server:
   port: 8761
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+spring:
+  application:
+    name: discovery-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: payments
+          uri: http://localhost:9090
+          predicates:
+            - Path=/payments/**
