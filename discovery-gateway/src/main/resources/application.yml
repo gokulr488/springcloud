@@ -9,8 +9,9 @@ spring:
     name: discovery-gateway
   cloud:
     gateway:
-      routes:
-        - id: payments
-          uri: http://localhost:9090
-          predicates:
-            - Path=/payments/**
+      mvc:
+        routes:
+          - id: payments
+            uri: http://localhost:8010
+            predicates:
+              - Path=/payments/**
