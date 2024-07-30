@@ -11,3 +11,9 @@ spring:
           default-label: master
           username: gokulr488
           password: ${GITHUB_TOKEN}
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
